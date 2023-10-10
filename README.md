@@ -146,16 +146,27 @@ Run this commands:
   git clone https://github.com/JimOluwaseyi/Webpack-project.git
 ```
 
+### Install
+
+<!-- No Installation required! -->
+To install the packages in package.json, run
+
+```sh
+cd webpack-project
+npm install
+```
+
+
+
+
+
 
 ### Usage
+ To start the project
 
-To run the project, execute the following command:
-
- Open index.html in your text editor and run using live server extension.
-
-### Run tests
-
-To run tests, run the following command:
+```sh
+npm run dev
+```
 
 > Coming Soon
 
