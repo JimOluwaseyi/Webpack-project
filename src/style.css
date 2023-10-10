@@ -38,6 +38,10 @@
   color: grey;
 }
 
+.fa-trash-can {
+  color: rgba(128, 128, 128, 0.806);
+}
+
 .inputDiv {
   display: flex;
   justify-content: space-between;
@@ -45,30 +49,31 @@
   border-bottom: 1px solid grey;
 }
 
-#addList {
+#addTaskBtn {
+  border: none;
+  background: none;
+}
+
+#taskInput {
   width: 100%;
   font-style: italic;
   border: none;
   outline: none;
 }
 
-#checkboxList li {
-  list-style-type: none;
-}
-
-.gap {
+.task {
   display: flex;
-  gap: 15px;
-
-  /* padding: 10px; */
-}
-
-.ulContainer {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid grey;
   align-items: center;
+  justify-content: space-between;
   padding: 10px;
+  border-bottom: 1px solid grey;
+  list-style: none;
+}
+
+.task .left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .material-symbols-outlined {
