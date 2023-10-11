@@ -70,7 +70,13 @@
   list-style: none;
 }
 
+#edit{
+  outline: none;
+  flex: 1;
+}
+
 .task .left {
+  flex: 1;
   display: flex;
   align-items: center;
   gap: 15px;
