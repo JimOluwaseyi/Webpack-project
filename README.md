@@ -113,7 +113,7 @@ For more information on the importance of a professional README for your reposit
 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-> Comgit ing Soon
+> Coming Soon
 <!-- Click [live demo link to view project](https://jimoluwaseyi.github.io/module-one-capstone/) -->
 
 
@@ -129,26 +129,30 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
- 1- Web browser.
- 2- Code editor.
- 3- Git-SCM.
- 4- npm run dev
+- A web browser
+- A working node installation
+
+<!--
+Example command:
+
+```sh
+ gem install rails
+```
+ -->
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-
-Run this commands:
+Run this commands :
 
 ```sh
-  cd webpack-project
-  git clone https://github.com/JimOluwaseyi/Webpack-project.git
+cd webpack-project
+git clone https://github.com/JimOluwaseyi/Webpack-project.git
 ```
 
 ### Install
 
-<!-- No Installation required! -->
 To install the packages in package.json, run
 
 ```sh
@@ -156,21 +160,17 @@ cd webpack-project
 npm install
 ```
 
-
-
-
-
-
 ### Usage
- To start the project
+To start this project:
 
 ```sh
 npm run dev
+
 ```
 
-> Coming Soon
 
-### Deployment
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
