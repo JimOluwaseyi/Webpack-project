@@ -1,0 +1,89 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.centerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container {
+  width: 500px;
+  box-shadow: 5px 5px 5px 5px rgba(128, 128, 128, 0.534);
+  border-radius: 5px;
+}
+
+.head {
+  border-bottom: 1px solid grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.head h1 {
+  font-size: 15px;
+  font-weight: 100;
+  color: #333333de;
+}
+
+.fa-arrows-rotate,
+.fa-ellipsis-vertical {
+  font-size: 13px;
+  color: grey;
+}
+
+.inputDiv {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid grey;
+}
+
+#addList {
+  width: 100%;
+  font-style: italic;
+  border: none;
+  outline: none;
+}
+
+#checkboxList li {
+  list-style-type: none;
+}
+
+.gap {
+  display: flex;
+  gap: 15px;
+
+  /* padding: 10px; */
+}
+
+.ulContainer {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid grey;
+  align-items: center;
+  padding: 10px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-size: 12px;
+  color: grey;
+}
+
+#completed p {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #33333315;
+  color: grey;
+  font-size: 17px;
+}
