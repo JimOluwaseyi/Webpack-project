@@ -36,6 +36,7 @@
 .fa-ellipsis-vertical {
   font-size: 13px;
   color: grey;
+  cursor: all-scroll;
 }
 
 .fa-trash-can {
