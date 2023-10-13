@@ -1,4 +1,5 @@
 let tasks = JSON.parse(localStorage.getItem('task')) || [];
+import { taskcompleted, taskNotcompleted, allTaskCompleted } from "./completedTask";
 
 // Function to set localstorage initially beofre getting in to the browser
 const saveTaskToLocalStorage = () => {
