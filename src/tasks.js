@@ -7,11 +7,13 @@ const saveTaskToLocalStorage = () => {
 
 //  Function for Saving  task
 const addNewTask = (title) => {
-  tasks.push({
-    description: title,
-    completed: false,
-    index: tasks.length + 1,
-  });
+  if(title.trim()!==""){
+    tasks.push({
+      description: title,
+      completed: false,
+      index: tasks.length + 1,
+    });
+  }
   saveTaskToLocalStorage();
 };
 
