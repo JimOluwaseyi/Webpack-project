@@ -4,10 +4,6 @@ const taskcompleted = (task) => {
 const taskNotcompleted = (task) => {
   task.completed = false;
 };
+const allTaskCompleted = (alltask) => alltask.filter((task) => !task.completed);
 
-const allTaskCompleted = (allCompleted) => {
-  tasks.filter((task) => task.index !== task.allCompleted);
-};
-
-
-export {taskcompleted, taskNotcompleted, allTaskCompleted}
+export { taskcompleted, taskNotcompleted, allTaskCompleted };
