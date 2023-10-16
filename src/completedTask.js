@@ -4,6 +4,12 @@ const taskcompleted = (task) => {
 const taskNotcompleted = (task) => {
   task.completed = false;
 };
-const allTaskCompleted = (alltask) => alltask.filter((task) => !task.completed);
+const allTaskCompleted = (alltask) => {
+  const newTask = alltask.filter((task) => !task.completed);
+  newTask.forEach((task, indx) => {
+    task.index = indx + 1;
+  });
+  return newTask;
+};
 
 export { taskcompleted, taskNotcompleted, allTaskCompleted };
