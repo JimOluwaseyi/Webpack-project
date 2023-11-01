@@ -1,3 +1,9 @@
+import {
+  taskcompleted,
+  taskNotcompleted,
+  allTaskCompleted,
+} from './completedTask.js';
+
 let tasks = JSON.parse(localStorage.getItem('task')) || [];
 
 // Function to set localstorage initially beofre getting in to the browser
@@ -14,6 +20,7 @@ const addNewTask = (title) => {
       index: tasks.length + 1,
     });
   }
+
   saveTaskToLocalStorage();
 };
 
@@ -47,6 +54,24 @@ const editTask = (taskElement, icon, edit, index) => {
     }
   });
 };
+// Function to set up the delete task action
+
+const setupDeleteTask = (taskEle, index) => {
+  function taskRemoval(deleteTask) {
+    tasks = tasks.filter((task) => task.index !== deleteTask);
+    tasks.forEach((task, idx) => {
+      task.index = idx + 1;
+    });
+    taskEle.remove();
+    saveTaskToLocalStorage();
+  }
+  const deleteIcon = taskEle.querySelector('.right .fa-ellipsis-vertical');
+  if (deleteIcon) {
+    deleteIcon.addEventListener('click', () => {
+      taskRemoval(index);
+    });
+  }
+};
 
 // Function for Creating Element to be populated to the page
 
@@ -62,31 +87,34 @@ const generateTaskElement = (task) => {
         <i class="fa-solid fa-ellipsis-vertical"></i>
       </div>
   `;
-
-  // Function to set up the delete task action
-
-  const setupDeleteTask = (taskEle, index) => {
-    function taskRemoval(deleteTask) {
-      tasks = tasks.filter((task) => task.index !== deleteTask);
-      tasks.forEach((task, idx) => {
-        task.index = idx + 1;
-      });
-      taskEle.remove();
-      saveTaskToLocalStorage();
-    }
-    const deleteIcon = taskEle.querySelector('.right .fa-ellipsis-vertical');
-    if (deleteIcon) {
-      deleteIcon.addEventListener('click', () => {
-        taskRemoval(index);
-      });
-    }
-  };
-
   const rightIcon = taskElement.querySelector('.fa-solid');
   const edit = taskElement.querySelector('#edit');
+
+  const checkBox = taskElement.querySelector('.checkbox');
+  checkBox.checked = task.completed;
+
+  if (task.completed) {
+    taskcompleted(task);
+    edit.style.textDecoration = 'line-through';
+    edit.style.color = 'grey';
+  }
+
+  checkBox.addEventListener('click', () => {
+    task.completed = checkBox.checked; // Update the task's completed property
+    saveTaskToLocalStorage();
+    if (checkBox.checked) {
+      taskcompleted(task);
+      edit.style.textDecoration = 'line-through';
+      edit.style.color = 'grey';
+    } else {
+      taskNotcompleted(task);
+      edit.style.textDecoration = '';
+      edit.style.color = '';
+    }
+  });
+
   setupDeleteTask(taskElement, task.index);
   editTask(taskElement, rightIcon, edit, task.index);
-
   return taskElement;
 };
 
@@ -99,5 +127,15 @@ const populateList = () => {
     taskList.appendChild(taskElement);
   });
 };
+
+//  function for deleting all tasks
+
+const clearBtn = document.querySelector('#clearBtn');
+
+clearBtn.addEventListener('click', () => {
+  tasks = allTaskCompleted(tasks);
+  populateList();
+  saveTaskToLocalStorage();
+});
 
 export { addNewTask, populateList };

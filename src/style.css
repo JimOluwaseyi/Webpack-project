@@ -89,7 +89,7 @@
   color: grey;
 }
 
-#completed p {
+#completed #clearBtn {
   width: 100%;
   height: 50px;
   display: flex;
@@ -97,5 +97,7 @@
   align-items: center;
   background: #33333315;
   color: grey;
+  border: none;
+  text-decoration: underline;
   font-size: 17px;
 }
