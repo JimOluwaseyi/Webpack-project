@@ -21,7 +21,6 @@ const addNewTask = (title) => {
     });
   }
 
-  saveTaskToLocalStorage();
 };
 
 //  Edit task manipulation
@@ -34,6 +33,7 @@ const editTask = (taskElement, icon, edit, index) => {
       edit.contentEditable = true;
       edit.focus();
     } else {
+      edit.contentEditable = false;
       icon.classList.remove('fa-trash-can');
       icon.classList.add('fa-ellipsis-vertical');
       taskElement.style.backgroundColor = '';
@@ -43,6 +43,7 @@ const editTask = (taskElement, icon, edit, index) => {
   edit.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
       edit.contentEditable = false;
+      edit.focus();
       icon.classList.remove('fa-trash-can');
       icon.classList.add('fa-ellipsis-vertical');
       taskElement.style.backgroundColor = '';

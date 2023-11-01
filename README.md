@@ -163,13 +163,6 @@ npm install
 ### Usage
 To start this project:
 
-```sh
-npm run dev
-
-```
-
-
-
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
