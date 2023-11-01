@@ -21,6 +21,7 @@ const addNewTask = (title) => {
     });
   }
 
+  saveTaskToLocalStorage();
 };
 
 //  Edit task manipulation
